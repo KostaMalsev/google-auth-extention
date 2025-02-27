@@ -1,2 +1,162 @@
+/* Google Sign In Button */
+.google-sign-in-container {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0;
+}
 
-
+.google-sign-in-button {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  color: #3c4043;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  padding: 1px 24px 1px 1px;
+  font-family: 'Google Sans', Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s;
+}
+
+.google-sign-in-button:hover {
+  background-color: #f8f9fa;
+}
+
+.google-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  height: 38px;
+  width: 38px;
+  margin-right: 10px;
+}
+
+.google-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* User Profile */
+.user-profile {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+  border: 1px solid #dadce0;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.user-name {
+  font-weight: 500;
+  color: #202124;
+  font-size: 14px;
+}
+
+.user-email {
+  color: #5f6368;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.sign-out-button {
+  background-color: #ea4335;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sign-out-button:hover {
+  background-color: #d93025;
+}
+
+/* Items List */
+.items-list-container {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 16px;
+}
+
+.items-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  background-color: white;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 8px;
+  border: 1px solid #dadce0;
+  transition: box-shadow 0.2s;
+}
+
+.item:hover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.item-name {
+  font-weight: 500;
+  color: #202124;
+  font-size: 14px;
+}
+
+.item-description {
+  color: #5f6368;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Loading Spinner */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.spinner {
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top: 3px solid #1a73e8;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+.loading-container p {
+  color: #5f6368;
+  font-size: 14px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
