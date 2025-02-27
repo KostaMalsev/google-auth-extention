@@ -26,7 +26,7 @@ function App() {
   const handleSignIn = () => {
     setIsLoading(true);
     setError(null);
-    
+
     chrome.runtime.sendMessage({ action: "authenticate" }, (response) => {
       if (response.success) {
         // Get user info after successful login
@@ -35,19 +35,19 @@ function App() {
             "Authorization": `Bearer ${response.token}`
           }
         })
-        .then(response => response.json())
-        .then(data => {
-          // Save user info
-          chrome.storage.local.set({ userInfo: data.user }, () => {
-            setUser(data.user);
-            setIsAuthenticated(true);
+          .then(response => response.json())
+          .then(data => {
+            // Save user info
+            chrome.storage.local.set({ userInfo: data.user }, () => {
+              setUser(data.user);
+              setIsAuthenticated(true);
+              setIsLoading(false);
+            });
+          })
+          .catch(err => {
+            setError("Failed to get user information");
             setIsLoading(false);
           });
-        })
-        .catch(err => {
-          setError("Failed to get user information");
-          setIsLoading(false);
-        });
       } else {
         setError(response.error || "Authentication failed");
         setIsLoading(false);
@@ -68,10 +68,10 @@ function App() {
   const handleFetchItems = () => {
     setIsLoading(true);
     setError(null);
-    
+
     chrome.runtime.sendMessage({ action: "getItems" }, (response) => {
       setIsLoading(false);
-      
+
       if (response.success) {
         setItems(response.items);
       } else {
@@ -87,26 +87,26 @@ function App() {
   return (
     <div className="app-container">
       <h1>My Items Extension</h1>
-      
+
       {!isAuthenticated ? (
         <GoogleSignInButton onClick={handleSignIn} />
       ) : (
         <>
           <UserProfile user={user} onSignOut={handleSignOut} />
-          
+
           <div className="fetch-container">
-            <button 
-              className="fetch-button" 
+            <button
+              className="fetch-button"
               onClick={handleFetchItems}
             >
               Fetch My Items
             </button>
           </div>
-          
+
           {items.length > 0 && <ItemsList items={items} />}
         </>
       )}
-      
+
       {error && (
         <div className="error-message">
           <p>{error}</p>
