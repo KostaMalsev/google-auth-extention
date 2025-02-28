@@ -19,7 +19,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         .then(response => response.json())
         .then(userInfo => {
           // Send token to your backend for verification
-          fetch("https://your-vercel-app.vercel.app/api/login", {
+          fetch("https://google-auth-extention.vercel.app/api/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ token: token })
@@ -46,7 +46,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     return true; // Keep the connection open for the async response
   }
 });
-
+/*
 // Function to handle authentication with Google
 async function authenticate() {
   return new Promise((resolve, reject) => {
@@ -111,6 +111,8 @@ async function authenticate() {
     });
   });
 }
+*/
+
 
 // Function to fetch items from our backend
 async function fetchItems(token) {

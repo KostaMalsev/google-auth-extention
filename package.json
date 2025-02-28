@@ -1,0 +1,9 @@
+{
+    "name": "google-auth-extension-backend",
+    "version": "1.0.0",
+    "description": "Backend for Chrome extension with Google OAuth",
+    "dependencies": {
+        "node-fetch": "^2.6.9",
+        "jsonwebtoken": "^9.0.0"
+    }
+}
