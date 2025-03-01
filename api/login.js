@@ -54,6 +54,8 @@ module.exports = async (req, res) => {
             { expiresIn: '7d' }
         );
 
+        console.log(sessionToken)
+
         // Return success with backend token
         return res.status(200).json({
             success: true,
