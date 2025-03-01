@@ -30,6 +30,8 @@ module.exports = async (req, res) => {
         // Extract token
         const token = authHeader.split(' ')[1];
 
+        console.log('verify got jwt token:', token, 'decoded:', jwt.verify(token, JWT_SECRET)); //TBD@@
+
         // Verify token
         const decoded = jwt.verify(token, JWT_SECRET);
 

@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "My Items Extension",
+  "name": "Google Auth Extention",
   "version": "1.0.0",
   "description": "Access your items with Google OAuth",
   "permissions": [
@@ -8,7 +8,7 @@
     "storage"
   ],
   "host_permissions": [
-    "https://your-vercel-app.vercel.app/*"
+    "google-auth-extention.vercel.app/*"
   ],
   "background": {
     "service_worker": "background.js"
