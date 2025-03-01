@@ -30,7 +30,7 @@ function App() {
     chrome.runtime.sendMessage({ action: "authenticate" }, (response) => {
       if (response.success) {
         // Get user info after successful login
-        fetch("https://your-vercel-app.vercel.app/api/login/verify", {
+        fetch("https://google-auth-extention.vercel.app/api/login/verify", {
           headers: {
             "Authorization": `Bearer ${response.token}`
           }
